@@ -1,0 +1,124 @@
+:root 
+{
+    --main--color:rgb(255, 196, 0);
+}
+body{
+ font-family: Opan sans,sans-serif;
+}
+/* Start Landing Page*/
+.landing-page{
+    min-height: 100vh;
+    background-image: url('../imags/Web_development.jpg');
+    background-size:cover;
+    position: relative;
+}
+.landing-page .overlay
+{
+    background-color: #11091726;
+    position: absolute;
+    width:100%;
+    height:100% ;
+    left:0;
+    top:0;
+    z-index: 1;
+
+}
+.headr-area
+{
+   position: relative;
+   z-index: 2;
+   color:#fff;
+   display: flex;
+   padding: 10px;
+}
+.headr-area .logo
+{
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 25px;
+
+}
+.headr-area .links
+{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-left: 0;
+    padding-right: 20px;
+    font-size:15px;
+}
+.headr-area .links li
+{
+    display: inline-block;
+    margin-left:10px ;
+}
+.headr-area .links li a 
+{
+    color:#000;
+    text-decoration: none;
+    transition: .3s;
+
+}
+.headr-area .links li a:hover,
+.headr-area .links li a.active
+{
+    color:var(--main--color)
+}
+
+.introduction-text
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50px, -50px);
+    z-index: 2;
+    color: #000000c9;
+    text-align: center;
+
+
+
+}
+.introduction-text h1
+{
+    transform: translate(-500px, -60Px);
+    font-size: 34px;
+    margin: -13px;
+    padding: 5px;
+}
+.introduction-text h1 span
+{
+  color: var(--main--color);
+}
+.introduction-text p 
+{    
+    transform: translate(-500px, -50px);
+    line-height: 1.6;
+    font-size: 20px;
+    margin:0;
+
+}
+
+/* End Landing Page*/
+ 
+/* Strat Settings Boks */
+.settings-boks
+{
+    position: fixed;
+    left:0;
+    top:0;
+    background-color:#676767;
+    width: 200px;
+    z-index:100;
+    min-height: 100vh;
+    transition: .32;
+}
+.settings-boks .fa-gear
+{
+
+}
+.settings-boks .settings-content
+{
+
+}
+/* End Settings Boks */
