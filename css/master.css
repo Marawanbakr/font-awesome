@@ -2,11 +2,23 @@
 {
     --main--color:rgb(255, 196, 0);
 }
+* {
+    box-sizing: border-box;
+}
 body{
- font-family: Opan sans,sans-serif;
+ font-family: 'Opan sans',sans-serif;
+}
+.container
+{
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin:auto;
+
 }
 /* Start Landing Page*/
-.landing-page{
+.landing-page
+{
     min-height: 100vh;
     background-image: url('../imags/Web_development.jpg');
     background-size:cover;
@@ -26,7 +38,7 @@ body{
 .headr-area
 {
    position: relative;
-   z-index: 2;
+   z-index: 2; 
    color:#fff;
    display: flex;
    padding: 10px;
@@ -71,20 +83,22 @@ body{
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50px, -50px);
+    transform: translate(-50%, -44%);
     z-index: 2;
     color: #000000c9;
     text-align: center;
+    width: 100%;
 
 
 
 }
 .introduction-text h1
 {
-    transform: translate(-500px, -60Px);
+    /* transform: translate(-500px, -60Px); */
     font-size: 34px;
-    margin: -13px;
+    margin: 0 0 12 px;
     padding: 5px;
+    transform: translate(-20px, -6Px);
 }
 .introduction-text h1 span
 {
@@ -92,33 +106,219 @@ body{
 }
 .introduction-text p 
 {    
-    transform: translate(-500px, -50px);
+    /* transform: translate(-500px, -50px); */
     line-height: 1.6;
     font-size: 20px;
     margin:0;
+    transform: translate(-4px, -38px);
+    font-size: x-large;
+
 
 }
 
 /* End Landing Page*/
  
 /* Strat Settings Boks */
-.settings-boks
+.settings-box
 {
     position: fixed;
+    left: -200px;
+    top: 0px;
+    background-color: #fff;
+    width: 200px;
+    z-index: 1000;
+    transition: .3s;
+    min-height: 100vh;
+}
+.settings-box.open
+{
+     left:0
+}
+.settings-box .toggle-settings
+{
+    position: absolute;
+    right: -30px;
+    top: 100px;
+    background-color: #fff;   
+    text-align: center;
+    cursor: pointer;
+    font-size:20px;
+}
+.settings-box .toggle-settings .fa-gear
+{
+    width: 30px;
+    padding: 8px 0;
+}
+.settings-box .option-box
+{
+  padding: 10px;
+  text-align: center;
+  background-color:#EEE;
+  margin: 10px;
+}
+.settings-box .option-box h4
+{
+  margin: 0;
+  color:#666;
+  font-size: 14px;
+}
+.settings-box .option-box .colors-list
+{
+   list-style:none ;
+   text-align: center;
+   padding:0;
+   margin:10px 0 0;
+}
+.settings-box .option-box .colors-list li
+{
+  width: 24px;
+  height: 24px;
+  background-color: rgba(22, 20, 22, 0.082);
+  cursor: pointer;
+  display: inline-block;
+  border:3px solid #fff
+  
+}
+.settings-box .option-box .colors-list li.active
+{
+    border:2px solid rgb(126, 118, 120);
+    margin:5px 0 ;
+}
+.settings-box .option-box .colors-list li:first-child
+{
+    background-color:#FF9800
+}
+.settings-box .option-box .colors-list li:nth-child(2)
+{
+    background-color:#e91e63
+}
+.settings-box .option-box .colors-list li:nth-child(3)
+{
+    background-color:#c54ac5
+}
+.settings-box .option-box .colors-list li:nth-child(4)
+{
+    background-color:#676776
+}
+.settings-box .option-box .colors-list li:nth-child(5)
+{
+    background-color:#279cca
+}
+
+.settings-box .random-background .yes,
+.settings-box .random-background .no
+{
+
+    width: 50px;
+    color:rgb(0, 0, 0);
+    margin-top: 10px;
+    display: inline-block;
+    font: size 12px;
+    padding:4px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    opacity: .5;
+    cursor: pointer;
+}
+.settings-box .random-background span.active
+{
+opacity:1
+}
+.settings-box .random-background .yes,
+.settings-box .random-background .no
+{
+    background-color: var(--main--color);
+
+}
+
+
+
+
+/* End Settings Boks */
+/* Start About Page0 */
+.about-us
+{
+   padding-top:50px;
+   padding-bottom: 50px;
+   display:flex;
+}
+.about-us .info-box
+{
+   margin-left: -338px;
+   flex: 1;
+   padding:30px;
+}
+.about-us .info-box h2
+{
+    font-weight: bold;
+    font-size: 30px;
+    color:var(--main--color);
+    margin: 0 0 10px;
+}
+.about-us .info-box p
+{
+    line-height: 1.8;
+    color:#767676;
+    margin:0;
+}
+.about-us .image-box
+{
+    flex: 1;
+    text-align: center;
+}
+.about-us .image-box img
+{
+    width: 353px;
+}
+ 
+/* Start Skill*/
+.skills
+{
+    padding-top:50px;
+    padding-bottom: 50px;
+    background-color:#EEE;
+}
+.skills h2
+{
+    font-weight: bold;
+    font-size: 30px;
+    color:var(--main--color);
+    margin: 0 0 50px;
+    text-align:center
+}
+.skills .skill-box
+{
+    background-color: #fff;
+    display: flex;
+    padding-bottom: 15px;
+    margin-bottom: 15PX;
+}
+.skills .skill-box .skill-name
+{
+ font-weight: bold;
+ width: 140px;
+ text-align: center;
+ line-height: 30px;
+}
+.skills .skill-box .skill-progress
+{
+ height: 30px;
+ width: calc(100% - 110px);
+ background-color:#f6f6f6;
+ border-radius: 6px;
+ position: relative;
+ overflow: hidden;
+}
+.skills .skill-box .skill-progress span
+{
+    position: absolute;
     left:0;
     top:0;
-    background-color:#676767;
-    width: 200px;
-    z-index:100;
-    min-height: 100vh;
-    transition: .32;
+    width: 0%;
+    height: 100%;
+    background-color:var(--main--color);
+    transition:all .3s
 }
-.settings-boks .fa-gear
-{
 
-}
-.settings-boks .settings-content
-{
 
-}
-/* End Settings Boks */
+/* End Skills */
