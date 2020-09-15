@@ -156,7 +156,7 @@ let landingPage = document.querySelector(".landing-page");
   function randomizeImags (){
 
     if (backgroundOption === true)
-      ackgroundInterval = setInterval(() => {
+      backgroundInterval = setInterval(() => {
       //Get Random Number
       let randomNumber = Math.floor(Math.random() * imgsArray.length); 
       // Change Background Image Url
@@ -167,32 +167,29 @@ let landingPage = document.querySelector(".landing-page");
     
 }
 
-randomizeImags () 
-
-
+    randomizeImags ();
 
 // Select Skills Selector
 
  let ourSkills = document.querySelector(".skills");
 
-   window.onscroll = function (){ 
+   window.onscroll = function () { 
    
   //Skills Offset Top
 
   let skillsOffsetTop = ourSkills.offsetTop
-  // this .console.log(skillsOffsetTop)
 
-  //Skills Outer Height 
-  let skillsOuterHeight = ourSkills.offsetHight;
+  // Skills Outer Height 
+  let skillsOuterHeight = ourSkills.offsetHeight;
 
-  //Window Hight
-  let windowHight = this.innerHeight;
+  // Window Hight
+  let windowHeight = this.innerHeight;
 
-  //window ScrollTop
+  // window ScrollTop
   let windowScrollTop = this.pageYOffset
 
 
-  if (windowScrollTop > ( skillsOffsetTop + skillsOuterHeight - windowHight )) {
+  if (windowScrollTop > ( skillsOffsetTop + skillsOuterHeight - windowHeight )) {
      
     let allSkills = document.querySelectorAll(".skill-box .skill-progress span")
  
@@ -207,9 +204,83 @@ randomizeImags ()
 };
 
 
+//Creat Popup With The Image
+let ourGallery = document.querySelectorAll(".gallery img")
 
+  ourGallery.forEach(img =>{
 
+img.addEventListener('click' , (e) =>{
 
+    // Crreat Overlay Element
+    let overlay = document.createElement("div")
+
+    // Add ClassName To Overlay
+    overlay.className = 'popup-overlay';
+    // Append Overlay To The Body
+    document.body.appendChild(overlay);
+
+    // Create The Popup Box
+
+    let popupBox = document.createElement("div")
+
+    // Add Class To The Popup Box
+    popupBox.className = 'popup-box';
+
+    if (img.alt !== null) {
+
+      // Create Heading
+      let imgHeading = document.createElement("h3");
+
+      // Create Text For Heading 
+      let imgText = document.createTextNode(img.alt);
+
+      // Append The Text To The Heading 
+      imgHeading.appendChild(imgText);
+    
+    popupBox.appendChild(imgHeading);
+  }
+
+    // Create The Image
+    let popupImage = document.createElement("img")
+
+    // SetnImage Source 
+    popupImage.src = img.src;
+
+    // Add Image To Popup Box
+    popupBox.appendChild(popupImage);
+
+    //  Append The Box To Body
+    document.body.appendChild(popupBox);
+
+    // Create The Close span 
+    let closeButton = document.createElement("span")
+
+    // Create The Close Button Text 
+    let closeButtonText = document.createTextNode("X");
+
+    // Append Text To Close Button 
+    closeButton.appendChild(closeButtonText)
+
+    // Append Text To Close Button 
+     closeButton.className = 'close-button'
+     
+    //  Add Close Button To The Popup Box 
+    popupBox.appendChild(closeButton)
+  });
+});
+
+// Close popup 
+document.addEventListener("click" , function (e){
+
+  if (e.target.className == 'close-button') {
+
+    //Remove The Current Popup 
+    e.target.parentNode.remove();
+
+    //Remove Overlay 
+    document.querySelector(".popup-overlay").remove();
+  }
+} )
 
 
 
