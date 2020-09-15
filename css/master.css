@@ -591,6 +591,9 @@ opacity:1
 {
  min-height: 600px;
  position: relative;
+ padding-top: 60px;
+ padding-bottom: 80px;
+
 
 }
 .testimonials:before
@@ -603,7 +606,7 @@ opacity:1
     background-color:var(--main--color);
     height:100%;
 }
-/* .testimonials:after 
+.testimonials:after 
 {
     content: '';
     width: 50%;
@@ -613,7 +616,6 @@ opacity:1
     background-color:#333;
     height: 100%;
 }
-*/
 .testimonials h2
 {
     font-weight: bold;
@@ -621,10 +623,7 @@ opacity:1
     color:#fff;
     margin: 0 0 50px;
     text-align: center;
+    position: relative;
+    z-index:2;
 }
-
-   
  /* End Testimonials */
-
-
-/* End Timeline */
