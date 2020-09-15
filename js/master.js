@@ -49,8 +49,7 @@ if (backgroundLocalItem !== null) {
   });
 
   if (backgroundLocalItem === "true") {
-    document.querySelector(".random-background .yes").classList.add("active");
-  } else {
+    document.querySelector(".random-background .yes").classList.add("active");  } else {
     document.querySelector(".random-background .no").classList.add("active");
   }
 }
@@ -121,16 +120,13 @@ let landingPage = document.querySelector(".landing-page");
 let imgsArray = ["01.png", "02.jpeg", "03.jpeg", "04.jpg", "05.jpg"];
 
 //Function To Randomize I mage
-<<<<<<< HEAD
   function randomizeImags (){
 
     if (backgroundOption === true)
       backgroundInterval = setInterval(() => {
-=======
 function randomizeImags() {
   if (backgroundOption === true)
     backgroundInterval = setInterval(() => {
->>>>>>> fd78ce44de446e96d07be7d829f527d8d8de5a50
       //Get Random Number
       let randomNumber = Math.floor(Math.random() * imgsArray.length);
       // Change Background Image Url
@@ -140,17 +136,12 @@ function randomizeImags() {
     }, 1000);
 }
 
-<<<<<<< HEAD
     randomizeImags ();
-=======
-randomizeImags();
->>>>>>> fd78ce44de446e96d07be7d829f527d8d8de5a50
 
 // Select Skills Selector
 
 let ourSkills = document.querySelector(".skills");
 
-<<<<<<< HEAD
    window.onscroll = function () { 
    
   //Skills Offset Top
@@ -159,7 +150,7 @@ let ourSkills = document.querySelector(".skills");
 
   // Skills Outer Height 
   let skillsOuterHeight = ourSkills.offsetHeight;
-=======
+
 window.onscroll = function () {
   //Skills Offset Top
 
@@ -168,12 +159,10 @@ window.onscroll = function () {
 
   //Skills Outer Height
   let skillsOuterHeight = ourSkills.offsetHight;
->>>>>>> fd78ce44de446e96d07be7d829f527d8d8de5a50
-
   // Window Hight
   let windowHeight = this.innerHeight;
 
-<<<<<<< HEAD
+
   // window ScrollTop
   let windowScrollTop = this.pageYOffset
 
@@ -183,7 +172,7 @@ window.onscroll = function () {
     let allSkills = document.querySelectorAll(".skill-box .skill-progress span")
  
    allSkills.forEach(skill => {
-=======
+
   //window ScrollTop
   let windowScrollTop = this.pageYOffset;
 
@@ -191,14 +180,10 @@ window.onscroll = function () {
     let allSkills = document.querySelectorAll(
       ".skill-box .skill-progress span"
     );
->>>>>>> fd78ce44de446e96d07be7d829f527d8d8de5a50
-
     allSkills.forEach((skill) => {
       skill.style.width = skill.dataset.progress;
     });
   }
-};
-<<<<<<< HEAD
 
 
 //Creat Popup With The Image
@@ -257,9 +242,6 @@ img.addEventListener('click' , (e) =>{
 
     // Append Text To Close Button 
     closeButton.appendChild(closeButtonText)
-
-    // Append Text To Close Button 
-     closeButton.className = 'close-button'
      
     //  Add Close Button To The Popup Box 
     popupBox.appendChild(closeButton)
@@ -283,6 +265,3 @@ document.addEventListener("click" , function (e){
 
 
 
-
-=======
->>>>>>> fd78ce44de446e96d07be7d829f527d8d8de5a50
