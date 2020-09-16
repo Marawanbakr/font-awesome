@@ -1,4 +1,4 @@
-// Check If There,s Local Storge Color Option
+ // Check If There,s Local Storge Color Option
 let mainColors = localStorage.getItem("color_option");
 
 if (mainColors !== null) {
@@ -6,6 +6,7 @@ if (mainColors !== null) {
 
   //  Remove Active Class From All Colors List Items
   document.querySelectorAll(".colors-list li ").forEach((element) => {
+
     element.classList.remove("active");
 
     //Add Active Class On Element With Data-Color === Local Srtonge Item
@@ -81,6 +82,7 @@ colorsLi.forEach((li) => {
   });
 });
 
+
 // Switch Random background Option
 const randomBackEl = document.querySelectorAll(".random-background span");
 
@@ -112,6 +114,7 @@ randomBackEl.forEach((span) => {
     }
   });
 });
+
 // Select Landing Page Element
 
 let landingPage = document.querySelector(".landing-page");
@@ -120,10 +123,6 @@ let landingPage = document.querySelector(".landing-page");
 let imgsArray = ["01.png", "02.jpeg", "03.jpeg", "04.jpg", "05.jpg"];
 
 //Function To Randomize I mage
-  function randomizeImags (){
-
-    if (backgroundOption === true)
-      backgroundInterval = setInterval(() => {
 function randomizeImags() {
   if (backgroundOption === true)
     backgroundInterval = setInterval(() => {
@@ -139,44 +138,22 @@ function randomizeImags() {
     randomizeImags ();
 
 // Select Skills Selector
-
 let ourSkills = document.querySelector(".skills");
 
-   window.onscroll = function () { 
-   
+  window.onscroll = function () {
   //Skills Offset Top
-
-  let skillsOffsetTop = ourSkills.offsetTop
-
-  // Skills Outer Height 
-  let skillsOuterHeight = ourSkills.offsetHeight;
-
-window.onscroll = function () {
-  //Skills Offset Top
-
   let skillsOffsetTop = ourSkills.offsetTop;
-  // this .console.log(skillsOffsetTop)
 
   //Skills Outer Height
-  let skillsOuterHeight = ourSkills.offsetHight;
-  // Window Hight
+  let skillsOuterHeight = ourSkills.offsetHeight;
+  // Window Height
   let windowHeight = this.innerHeight;
-
-
-  // window ScrollTop
-  let windowScrollTop = this.pageYOffset
-
-
-  if (windowScrollTop > ( skillsOffsetTop + skillsOuterHeight - windowHeight )) {
-     
-    let allSkills = document.querySelectorAll(".skill-box .skill-progress span")
- 
-   allSkills.forEach(skill => {
 
   //window ScrollTop
   let windowScrollTop = this.pageYOffset;
 
-  if (windowScrollTop > skillsOffsetTop + skillsOuterHeight - windowHight) {
+  if (windowScrollTop > skillsOffsetTop + skillsOuterHeight - windowHeight) {
+
     let allSkills = document.querySelectorAll(
       ".skill-box .skill-progress span"
     );
@@ -185,7 +162,7 @@ window.onscroll = function () {
     });
   }
 
-
+}
 //Creat Popup With The Image
 let ourGallery = document.querySelectorAll(".gallery img")
 
@@ -242,11 +219,16 @@ img.addEventListener('click' , (e) =>{
 
     // Append Text To Close Button 
     closeButton.appendChild(closeButtonText)
+
+    // Add Close Button
+    closeButton.className = 'close-button';
+
      
     //  Add Close Button To The Popup Box 
     popupBox.appendChild(closeButton)
   });
 });
+
 
 // Close popup 
 document.addEventListener("click" , function (e){
@@ -259,9 +241,8 @@ document.addEventListener("click" , function (e){
     //Remove Overlay 
     document.querySelector(".popup-overlay").remove();
   }
-} )
-
-
+  
+});
 
 
 
